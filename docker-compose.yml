@@ -1,0 +1,77 @@
+services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: hosting_db
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MARIADB_DATABASE: ${DB_NAME}
+      MARIADB_USER: ${DB_USER}
+      MARIADB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+    networks:
+      - hosting_net
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root -p$${DB_ROOT_PASSWORD} || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  web:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: hosting_web
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      APP_ENV: ${APP_ENV}
+      DB_HOST: mariadb
+      DB_PORT: 3306
+      DB_NAME: ${DB_NAME}
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - ./app/src:/var/www/html
+      - ./www:/var/www/html/public/uploads
+      - ./logs/apache:/var/log/apache2
+    networks:
+      - hosting_net
+
+  ftp:
+    image: fauria/vsftpd
+    container_name: hosting_ftp
+    restart: unless-stopped
+    ports:
+      - "21:21"
+      - "21100-21110:21100-21110"
+    environment:
+      FTP_USER: ${FTP_USER}
+      FTP_PASS: ${FTP_PASSWORD}
+      PASV_ADDRESS: ${PASV_ADDRESS}
+      PASV_MIN_PORT: 21100
+      PASV_MAX_PORT: 21110
+      LOCAL_UMASK: 022
+      FILE_OPEN_MODE: 0666
+    volumes:
+      - ./www:/home/vsftpd/${FTP_USER}
+      - ./ftp/logs:/var/log/vsftpd
+    networks:
+      - hosting_net
+    depends_on:
+      - web
+
+networks:
+  hosting_net:
+    driver: bridge
+
+volumes:
+  db_data:
