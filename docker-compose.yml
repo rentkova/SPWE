@@ -43,6 +43,7 @@ services:
       - ./app/src:/var/www/html
       - ./www:/var/www/html/public/uploads
       - ./logs/apache:/var/log/apache2
+      - ./apache/sites:/etc/apache2/sites-enabled
     networks:
       - hosting_net
 
