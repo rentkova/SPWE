@@ -1,0 +1,5 @@
+Pro spuštění musíte nastavit
+1. jméno, heslo a ip adresu jak pro ftp tak db v .env
+2. mít naimportovanou db a do ní ručně vložit záznam o uživetelých + ním vytvořit adresář v ./www (to se pak bude dělat web. aplikace)
+3. v dockerfile nastavit na řádku 33 a 34 passwd podle toho jaké jste nastavili heslo u db
+4. Už by mělo stačit jen otevřít FileZillu napsat údaje a připojit
