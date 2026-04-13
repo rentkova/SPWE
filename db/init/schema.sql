@@ -1,7 +1,7 @@
 /*M!999999\- enable the sandbox mode */ 
 -- MariaDB dump 10.19-12.2.2-MariaDB, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: hosting_centrum
+-- Host: localhost    Database: hosting_db
 -- ------------------------------------------------------
 -- Server version	12.2.2-MariaDB-ubu2404
 
@@ -17,14 +17,14 @@
 /*M!100616 SET @OLD_NOTE_VERBOSITY=@@NOTE_VERBOSITY, NOTE_VERBOSITY=0 */;
 
 --
--- Current Database: `hosting_centrum`
+-- Current Database: `hosting_db`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `hosting_centrum`*/;
+/*!40000 DROP DATABASE IF EXISTS `hosting_db`*/;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `hosting_centrum` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `hosting_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_uca1400_ai_ci */;
 
-USE `hosting_centrum`;
+USE `hosting_db`;
 
 --
 -- Table structure for table `domeny`
@@ -93,7 +93,7 @@ COMMIT;
 SET AUTOCOMMIT=@OLD_AUTOCOMMIT;
 
 --
--- Dumping routines for database 'hosting_centrum'
+-- Dumping routines for database 'hosting_db'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
