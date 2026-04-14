@@ -1,0 +1,95 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4f8;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  padding: 36px 40px;
+  width: 100%;
+  max-width: 700px;
+}
+
+h1 { font-size: 1.7rem; color: #1f4e79; margin-bottom: 20px; }
+h2 { font-size: 1.2rem; color: #2e75b6; margin: 24px 0 12px; }
+
+p  { margin-bottom: 10px; line-height: 1.5; }
+hr { border: none; border-top: 1px solid #dde3ea; margin: 20px 0; }
+a  { color: #2e75b6; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Formuláře */
+form { display: flex; flex-direction: column; gap: 10px; max-width: 400px; }
+
+input {
+  padding: 9px 12px;
+  border: 1px solid #c8d6e5;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  width: 100%;
+}
+input:focus { outline: none; border-color: #2e75b6; box-shadow: 0 0 0 2px #d6e8fb; }
+
+button {
+  padding: 10px 18px;
+  background: #2e75b6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  width: fit-content;
+}
+button:hover { background: #1f5a9a; }
+
+/* Zprávy */
+.msg {
+  padding: 10px 14px;
+  border-radius: 5px;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+.msg.error   { background: #fce4d6; color: #843c0c; border-left: 4px solid #e07030; }
+.msg.success { background: #e2efda; color: #375623; border-left: 4px solid #70ad47; }
+
+/* Tabulka domén */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+th {
+  background: #1f4e79;
+  color: #fff;
+  padding: 8px 12px;
+  text-align: left;
+}
+td {
+  padding: 7px 12px;
+  border-bottom: 1px solid #e8edf2;
+}
+tr:nth-child(even) td { background: #f4f8fc; }
+
+/* Tlačítko smazat */
+.btn-delete {
+  padding: 6px 12px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  width: fit-content;
+}
+.btn-delete:hover { background: #a93226; }

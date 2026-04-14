@@ -1,0 +1,18 @@
+1. Příkaz pro importování databáze ze souboru hosting_centrum.sql.gz do MariaDB v Docker
+
+	zcat /ADRESAR/hosting_centrum.sql.gz | docker exec -i KONTEJNER mariadb -u root -p HESLO
+
+		ADRESAR nahradit názvem adresáře obsahujícím soubor hosting_centrum.sql.gz (např.: vaše sdílená složka)
+		KONTEJNER nahradit názvem kontejneru obsahujícím MariaDB
+		HESLO nahradit heslem pro root
+
+	Importovaná databáze se bude jmenovat hosting_centrum
+
+2. Příkaz pro přístup do MariaDB v Docker
+
+	docker exec -it KONTEJNER mariadb -u root -p HESLO
+
+		KONTEJNER nahradit názvem kontejneru
+		HESLO nahradit heslem pro root
+
+	MariaDB zle opustit pomocí CTRL+D nebo \q

@@ -1,0 +1,22 @@
+FTP server – poznámky ke konfiguraci
+=====================================
+
+Autentizace FTP uživatelů probíhá přímo přes databázi MariaDB
+pomocí PAM modulu pam_mysql.
+
+Postup:
+1. Nastavte hesla a PASV_ADDRESS v souboru .env
+   (PASV_ADDRESS = IP adresa VM, zjistit příkazem: ip a)
+
+2. Spusťte celý stack:
+   docker compose up -d --build
+
+3. FTP přihlašovací údaje se berou z tabulky `domeny` v databázi.
+   Záznamy vytváří PHP aplikace na dashboard.php po přihlášení.
+
+4. Otestujte přihlášení ve FileZille:
+   - Host:     IP adresa VM
+   - Uživatel: ftp_uzivatel z tabulky domeny
+   - Heslo:    ftp_heslo_hash z tabulky domeny
+   - Port:     21
+
