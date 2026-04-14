@@ -1,5 +1,22 @@
-Pro spuštění musíte nastavit
-1. jméno, heslo a ip adresu jak pro ftp tak db v .env
-2. mít naimportovanou db a do ní ručně vložit záznam o uživetelých + ním vytvořit adresář v ./www (to se pak bude dělat web. aplikace)
-3. v dockerfile nastavit na řádku 33 a 34 passwd podle toho jaké jste nastavili heslo u db
-4. Už by mělo stačit jen otevřít FileZillu napsat údaje a připojit
+FTP server – poznámky ke konfiguraci
+=====================================
+
+Autentizace FTP uživatelů probíhá přímo přes databázi MariaDB
+pomocí PAM modulu pam_mysql.
+
+Postup:
+1. Nastavte hesla a PASV_ADDRESS v souboru .env
+   (PASV_ADDRESS = IP adresa VM, zjistit příkazem: ip a)
+
+2. Spusťte celý stack:
+   docker compose up -d --build
+
+3. FTP přihlašovací údaje se berou z tabulky `domeny` v databázi.
+   Záznamy vytváří PHP aplikace na dashboard.php po přihlášení.
+
+4. Otestujte přihlášení ve FileZille:
+   - Host:     IP adresa VM
+   - Uživatel: ftp_uzivatel z tabulky domeny
+   - Heslo:    ftp_heslo_hash z tabulky domeny
+   - Port:     21
+

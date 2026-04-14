@@ -1,0 +1,6 @@
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:18:34 +0000] "GET / HTTP/1.1" 200 247 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:18:34 +0000] "GET /favicon.ico HTTP/1.1" 404 528 "http://moje.local/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:19:17 +0000] "GET / HTTP/1.1" 404 530 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:19:18 +0000] "GET /favicon.ico HTTP/1.1" 404 529 "http://tvoje.local/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:19:35 +0000] "GET / HTTP/1.1" 200 248 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
+172.18.0.3:80 172.18.0.1 - - [14/Apr/2026:13:20:22 +0000] "GET / HTTP/1.1" 200 248 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36"
