@@ -1,4 +1,5 @@
 # Pro C:\Windows\System32\drivers\etc\hosts
+127.0.0.1  app.local
 
 127.0.0.1  moje.local
 127.0.0.1  tvoje.local
