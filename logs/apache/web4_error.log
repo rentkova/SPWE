@@ -1,0 +1,2 @@
+[Wed Apr 15 09:15:36.584321 2026] [ssl:warn] [pid 1:tid 1] AH01906: web4.local:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Apr 15 09:15:36.867697 2026] [ssl:warn] [pid 1:tid 1] AH01906: web4.local:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)

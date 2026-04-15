@@ -40,6 +40,8 @@ CREATE TABLE `domeny` (
   `ftp_uzivatel` varchar(50) DEFAULT NULL,
   `ftp_heslo_hash` varchar(255) DEFAULT NULL,
   `ftp_adresar` varchar(255) DEFAULT NULL,
+  `db_name` varchar(100) DEFAULT NULL,
+  `db_user` varchar(100) DEFAULT NULL,
   `datum_vytvoreni` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `domena` (`domena`),
